@@ -3,7 +3,6 @@
 #endif
 // endif ArduinoTestFramework
 
-
 #include "CppUnitTest.h"
 
 #include "D:\pc_07_1tb_ssd\programming\Arduino\arduino_projektai_002\TestsFrameworkForArduino\TestsFrameworkForArduino\lib\Result.h"
@@ -70,8 +69,6 @@ namespace TestArduinoCode
 			Assert::AreEqual(writeD06.pinNumber, 6);
 
 			Assert::AreEqual(writeD06.functionResult, 1);
-
-
 		}
 
 		TEST_METHOD(AnalogReadTest)
