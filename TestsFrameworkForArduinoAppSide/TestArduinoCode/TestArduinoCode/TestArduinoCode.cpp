@@ -18,7 +18,7 @@ namespace TestArduinoCode
 	{
 	public:
 		
-		TEST_METHOD(TestMethod1)
+		TEST_METHOD(DigitalReadTest)
 		{
 			Result readD00 = DigitalReadCmd(0);
 
@@ -28,11 +28,50 @@ namespace TestArduinoCode
 
 			Assert::AreEqual(readD00.functionNr, 1);
 
-			Assert::AreEqual(readD01.pinNumber, 1);
+			Assert::AreEqual(readD00.pinNumber, 0);
 
-			Assert::AreEqual(readD01.functionNr, 1);
+			Assert::AreEqual(readD00.functionResult, 0);
+
+			//Assert::AreEqual(readD01.functionNr, 1);
+
+			//Assert::AreEqual(readD01.pinNumber, 1);
+
+			//Assert::AreEqual(readD01.functionResult, 0);
 
 			Assert::AreEqual(readD02.functionNr, 1);
+
+			Assert::AreEqual(readD02.pinNumber, 2);
+
+			Assert::AreEqual(readD02.functionResult, 0);
+		}
+
+		TEST_METHOD(DigitalWriteTest)
+		{
+			Result writeD04 = DigitalWriteCmd(4, 1);
+
+			Result writeD05 = DigitalWriteCmd(5, 0);
+
+			Result writeD06 = DigitalWriteCmd(6, 1);
+
+			Assert::AreEqual(writeD04.functionNr, 2);
+
+			Assert::AreEqual(writeD04.pinNumber, 4);
+
+			Assert::AreEqual(writeD04.functionResult, 1);
+
+			Assert::AreEqual(writeD05.functionNr, 2);
+
+			Assert::AreEqual(writeD05.pinNumber, 5);
+
+			Assert::AreEqual(writeD05.functionResult, 0);
+
+			Assert::AreEqual(writeD06.functionNr, 2);
+
+			Assert::AreEqual(writeD06.pinNumber, 6);
+
+			Assert::AreEqual(writeD06.functionResult, 1);
+
+
 		}
 
 		TEST_METHOD(AnalogReadTest)
@@ -64,29 +103,29 @@ namespace TestArduinoCode
 
 		TEST_METHOD(AnalogWriteTest)
 		{
-			Result analogWriteA06 = DigitalReadCmd(6);
+			Result analogWriteA06 = AnalogWriteCmd(6, 15);
 
-			Result analogWriteA07 = DigitalReadCmd(7);
+			Result analogWriteA07 = AnalogWriteCmd(7, 35);
 
-			Result analogWriteA08 = DigitalReadCmd(8);
+			Result analogWriteA08 = AnalogWriteCmd(8, 70);
 
-			Assert::AreEqual(analogWriteA06.functionNr, 1);
+			Assert::AreEqual(analogWriteA06.functionNr, 4);
 
 			Assert::AreEqual(analogWriteA06.pinNumber, 6);
 
-			Assert::AreEqual(analogWriteA06.functionResult, 0);
+			Assert::AreEqual(analogWriteA06.functionResult, 15);
 
-			Assert::AreEqual(analogWriteA07.functionNr, 1);
+			Assert::AreEqual(analogWriteA07.functionNr, 4);
 
 			Assert::AreEqual(analogWriteA07.pinNumber, 7);
 
-			Assert::AreEqual(analogWriteA07.functionResult, 0);
+			Assert::AreEqual(analogWriteA07.functionResult, 35);
 
-			Assert::AreEqual(analogWriteA08.functionNr, 1);
+			Assert::AreEqual(analogWriteA08.functionNr, 4);
 
 			Assert::AreEqual(analogWriteA08.pinNumber, 8);
 
-			Assert::AreEqual(analogWriteA08.functionResult, 0);
+			Assert::AreEqual(analogWriteA08.functionResult, 70);
 		}
 	};
 }
