@@ -9,7 +9,7 @@ Result DigitalReadCmd(int pin)
 {
 	result.pinNumber = pin;
 	result.functionNr = 1;
-	//result.functionResult = pin + result.functionNr;
+	result.functionResult = pin + result.functionNr;
 #ifndef ArduinoTestFramework
 	result.functionResult = digitalRead(pin);
 #endif
@@ -32,7 +32,7 @@ Result AnalogReadCmd(int pin)
 {
 	result.pinNumber = pin;
 	result.functionNr = 3;
-	//result.functionResult = pin + result.functionNr;	
+	result.functionResult = pin + result.functionNr;
 #ifndef ArduinoTestFramework
 	result.functionResult = analogRead(pin);
 #endif	

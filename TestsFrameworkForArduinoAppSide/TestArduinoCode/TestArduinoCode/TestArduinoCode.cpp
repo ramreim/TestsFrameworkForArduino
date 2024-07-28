@@ -6,9 +6,9 @@
 
 #include "CppUnitTest.h"
 
-#include "D:\pc_07_1tb_ssd\programming\Arduino\arduino_projektai_002\test_framework_00003\lib\Result.h"
+#include "D:\pc_07_1tb_ssd\programming\Arduino\arduino_projektai_002\TestsFrameworkForArduino\TestsFrameworkForArduino\lib\Result.h"
 
-#include "D:\pc_07_1tb_ssd\programming\Arduino\arduino_projektai_002\test_framework_00003\lib\ExecuteCmd.h"
+#include "D:\pc_07_1tb_ssd\programming\Arduino\arduino_projektai_002\TestsFrameworkForArduino\TestsFrameworkForArduino\lib\ExecuteCmd.h"
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
@@ -30,19 +30,19 @@ namespace TestArduinoCode
 
 			Assert::AreEqual(readD00.pinNumber, 0);
 
-			Assert::AreEqual(readD00.functionResult, 0);
+			Assert::AreEqual(readD00.functionResult, 1);
 
-			//Assert::AreEqual(readD01.functionNr, 1);
+			Assert::AreEqual(readD01.functionNr, 1);
 
-			//Assert::AreEqual(readD01.pinNumber, 1);
+			Assert::AreEqual(readD01.pinNumber, 1);
 
-			//Assert::AreEqual(readD01.functionResult, 0);
+			Assert::AreEqual(readD01.functionResult, 2);
 
 			Assert::AreEqual(readD02.functionNr, 1);
 
 			Assert::AreEqual(readD02.pinNumber, 2);
 
-			Assert::AreEqual(readD02.functionResult, 0);
+			Assert::AreEqual(readD02.functionResult, 3);
 		}
 
 		TEST_METHOD(DigitalWriteTest)
@@ -86,19 +86,19 @@ namespace TestArduinoCode
 
 			Assert::AreEqual(analogReadA03.pinNumber, 3);
 
-			Assert::AreEqual(analogReadA03.functionResult, 0);
+			Assert::AreEqual(analogReadA03.functionResult, 6);
 
 			Assert::AreEqual(analogReadA04.functionNr, 3);
 
 			Assert::AreEqual(analogReadA04.pinNumber, 4);
 
-			Assert::AreEqual(analogReadA04.functionResult, 0);
+			Assert::AreEqual(analogReadA04.functionResult, 7);
 
 			Assert::AreEqual(analogReadA05.functionNr, 3);
 
 			Assert::AreEqual(analogReadA05.pinNumber, 5);
 
-			Assert::AreEqual(analogReadA05.functionResult, 0);
+			Assert::AreEqual(analogReadA05.functionResult, 8);
 		}
 
 		TEST_METHOD(AnalogWriteTest)
